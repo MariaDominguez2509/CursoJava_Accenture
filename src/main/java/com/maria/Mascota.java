@@ -8,4 +8,8 @@ public abstract class Mascota {
     protected abstract void sonido(); 
     protected abstract void come(); 
     protected abstract void bebe(); 
+
+    public void tipo(){
+        System.out.println("Esta mascota es un mamífero"); 
+    }
 }

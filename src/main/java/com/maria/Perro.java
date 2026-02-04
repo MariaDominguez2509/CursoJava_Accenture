@@ -1,5 +1,8 @@
 package com.maria;
-public class Perro extends Mascota{
+import com.maria.Paseable;
+import com.maria.SonidoPeligro;
+
+public class Perro extends Mascota implements Paseable, SonidoPeligro{
     
     private String raza;
 
@@ -42,4 +45,20 @@ public class Perro extends Mascota{
             System.out.println("El juguete número " + (i + 1) + " es: " + juguetes[i]);
         }
     }
+
+    @Override
+    public void paseo(){
+        System.out.println("Al perro le gusta pasear"); 
+    }
+
+    public int getEdad(){
+        return edad; 
+    }
+
+    @Override 
+    public void sonidoPeligro(){
+        System.out.println("El perro gruñe cuando se asusta");
+    }
+
+
 }

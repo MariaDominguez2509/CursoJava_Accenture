@@ -1,5 +1,7 @@
 package com.maria;
-public class Gato extends Mascota {
+import com.maria.Paseable;
+
+public class Gato extends Mascota implements Paseable, SonidoPeligro {
     private String raza; 
 
     public Gato(String nombre, int edad, String raza) {
@@ -37,4 +39,11 @@ public class Gato extends Mascota {
             System.out.println("Todavía es un cachorro");
         }
     }
+
+    @Override
+    public void paseo(){
+        System.out.println("A los gatos no les suele gustar pasear");
+    }
+
+
 }

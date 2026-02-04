@@ -3,7 +3,7 @@ public class Loro extends Mascota{
     private final static int numeroDeAlas = 2;
     private String[] colores;  
 
-    private int numeroDePatas = 2; 
+    private int numeroDePatas = 2; // lo sobreescribimos porque los loros son una excepcion
 
     public Loro(String nombre, int edad, String[] colores){
         this.nombre = nombre; 
@@ -20,10 +20,15 @@ public class Loro extends Mascota{
         } else {
            frase += "El loro se llama " + nombre + " tiene " + edad + " año y es "; 
         }
-        for(int i = 0; i < a - 1; i++){
-            frase += colores[i] + ", ";
+        if(a > 1){
+            for(int i = 0; i < a - 1; i++){
+                frase += colores[i] + ", ";
+            }
+            frase +="y " + colores[a-1];
+        } else {
+            frase += colores[0];
         }
-        frase +="y " + colores[a-1] + ", tiene " + numeroDePatas + " patas y " + numeroDeAlas + " alas";
+        frase += ", tiene " + numeroDePatas + " patas y " + numeroDeAlas + " alas";
         System.out.println(frase);
     }
     public void come(){
@@ -36,6 +41,10 @@ public class Loro extends Mascota{
         System.out.println("El loro habla y no se calla"); 
     }
 
+    @Override
+    public void tipo(){
+        System.out.println("Esta mascota es un ave"); 
+    }
 
 
 }
