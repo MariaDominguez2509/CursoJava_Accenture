@@ -11,9 +11,9 @@ public class Perro extends Mascota{
 
     public void caracteristicas(){
         if(edad > 1){
-            System.out.println("El perro se llama " + nombre + " tiene " + edad + " años y es un "+ raza);
+            System.out.println("El perro se llama " + nombre + " tiene " + edad + " años y es un "+ raza + " y tiene " + numeroDePatas + " patas");
         } else {
-            System.out.println("El perro se llama " + nombre + " tiene " + edad + " año y es un "+ raza);
+            System.out.println("El perro se llama " + nombre + " tiene " + edad + " año y es un "+ raza + "y tiene " + numeroDePatas + " patas");
         }
     }
     
@@ -33,6 +33,13 @@ public class Perro extends Mascota{
             System.out.println("El perro es adulto");
         } else{ 
             System.out.println("Todavía es un cachorro");
+        }
+    }
+
+    public void juguetes( String[] juguetes){
+        int a = juguetes.length; 
+        for (int i = 0; i < a; i++){
+            System.out.println("El juguete número " + (i + 1) + " es: " + juguetes[i]);
         }
     }
 }

@@ -6,6 +6,7 @@ public class App {
         p.tipoEdad();
         p.sonido();
         p.caracteristicas();
+        p.juguetes(new String[] {"Pelota", "Cuerda"});
     
 
         Gato g = new Gato("Gato", 1, "siames");
@@ -13,5 +14,10 @@ public class App {
         g.tipoEdad();
         g.sonido();
         g.caracteristicas();
+
+        Loro l = new Loro("Pajaro", 3, new String[] {"Rojo", "Amarillo", "Azul"}); 
+        l.caracteristicas();
+        l.come();
+
     }
 }

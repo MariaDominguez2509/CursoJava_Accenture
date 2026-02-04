@@ -10,9 +10,9 @@ public class Gato extends Mascota {
 
     public void caracteristicas(){
         if(edad > 1){
-            System.out.println("El gato se llama " + nombre + " tiene " + edad + " años y es un "+ raza);
+            System.out.println("El gato se llama " + nombre + " tiene " + edad + " años y es un "+ raza + " y tiene " + numeroDePatas + " patas" );
         } else {
-            System.out.println("El gato se llama " + nombre + " tiene " + edad + " año y es un "+ raza);
+            System.out.println("El gato se llama " + nombre + " tiene " + edad + " año y es un "+ raza + " y tiene " + numeroDePatas + " patas" );
         }
     }
 
