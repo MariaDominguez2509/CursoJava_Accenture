@@ -5,10 +5,11 @@ public class Loro extends Mascota{
 
     private int numeroDePatas = 2; // lo sobreescribimos porque los loros son una excepcion
 
-    public Loro(String nombre, int edad, String[] colores){
+    public Loro(String nombre, int edad, String[] colores, int codigoUnico){
         this.nombre = nombre; 
         this.edad = edad; 
         this.colores = colores; 
+        this.codigoUnico = codigoUnico; 
     }
 
     public void caracteristicas(){

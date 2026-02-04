@@ -5,11 +5,14 @@ import com.maria.SonidoPeligro;
 public class Perro extends Mascota implements Paseable, SonidoPeligro{
     
     private String raza;
+    private Pelo pelo; 
 
-    public Perro(String nombre, int edad, String raza){
+    public Perro(String nombre, int edad, String raza, String tipoPelo, int codigoUnico){
         this.nombre = nombre; 
         this.edad = edad; 
         this.raza = raza; 
+        this.pelo = new Pelo(tipoPelo);
+        this.codigoUnico = codigoUnico; 
     }
 
     public void caracteristicas(){
@@ -60,5 +63,9 @@ public class Perro extends Mascota implements Paseable, SonidoPeligro{
         System.out.println("El perro gruñe cuando se asusta");
     }
 
+    public void cortarPelo(){
+        System.out.println("El pelo antes estaba " + pelo.getTipo());
+        pelo.cortar();
+    }
 
 }

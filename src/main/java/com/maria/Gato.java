@@ -4,10 +4,11 @@ import com.maria.Paseable;
 public class Gato extends Mascota implements Paseable, SonidoPeligro {
     private String raza; 
 
-    public Gato(String nombre, int edad, String raza) {
+    public Gato(String nombre, int edad, String raza, int codigoUnico) {
         this.nombre = nombre; 
         this.edad = edad; 
         this.raza = raza; 
+        this.codigoUnico = codigoUnico; 
     }
 
     public void caracteristicas(){
