@@ -1,13 +1,18 @@
 package com.maria;
+
+import java.time.LocalDate;
+import java.time.Period;
+
 public class Loro extends Mascota{
     private final static int numeroDeAlas = 2;
     private String[] colores;  
 
     private int numeroDePatas = 2; // lo sobreescribimos porque los loros son una excepcion
 
-    public Loro(String nombre, int edad, String[] colores, int codigoUnico){
+    public Loro(String nombre, LocalDate nacimiento, String[] colores, int codigoUnico){
         this.nombre = nombre; 
-        this.edad = edad; 
+        this.nacimiento = nacimiento; 
+        this.edad = Period.between(nacimiento, LocalDate.now()).getYears(); 
         this.colores = colores; 
         this.codigoUnico = codigoUnico; 
     }

@@ -1,13 +1,19 @@
 package com.maria;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.Comparator;
+
 public class App {
     public static void main(String[] args) {
-        Perro p = new Perro("Firulais", 7, "Labrador", "corto", 001); 
+        Perro p = new Perro("Firulais", LocalDate.of(2022, 2, 6), "Labrador", "corto", 001); 
         p.come();
         p.tipoEdad();
         p.sonido();
         p.caracteristicas();
-        p.juguetes(new String[] {"Pelota", "Cuerda"});
+        p.juguetes(new String[] {"Pelota", "Cuerda"}); //usando String[]
+        p.juguetes2(List.of("Pelota", "Cuerda")); //usando List 
         p.tipo();
         p.paseo();
         int edad = p.getEdad();
@@ -17,29 +23,31 @@ public class App {
     
     
 
-        Gato g = new Gato("Gato", 1, "siames", 002);
+        Gato g = new Gato("Gato",LocalDate.of(2008, 6, 10) , "siames", 002);
         g.jugueteFavorito("Pelota");
+        g.jugueteFavorito("Balón");
         g.tipoEdad();
         g.sonido();
         g.caracteristicas();
         g.sonidoPeligro();
 
-        Loro l = new Loro("Pajaro", 3, new String[] {"Rojo", "Amarillo", "Azul"}, 003); 
+        Loro l = new Loro("Pajaro",LocalDate.of(2025, 2, 4) , new String[] {"Rojo", "Amarillo", "Azul"}, 003); 
         l.caracteristicas();
         l.come();
         l.tipo();
         l.sonido(); 
 
-        Loro l2 = new Loro("A", 4 , new String[] {"Morado"}, 004); 
+        Loro l2 = new Loro("A",  LocalDate.of(2018, 8, 30), new String[] {"Morado"}, 004); 
         l2.caracteristicas(); 
 
         // Vamos a trabajar con ArrayList 
 
-        Mascota perro = new Perro("Kenai", 7, "Mezcla", "corto",004); 
-        Mascota perro2 = new Perro("Nala", 8, "Mezcla", "largo", 005); 
-        Mascota gato = new Gato("Missy", 2, "egipcio", 006); 
-        Mascota loro = new Loro("Ago", 4, new String[]{"Naranja", "Morado"}, 007); 
-
+        Mascota perro = new Perro("Kenai", LocalDate.of(2018, 2, 26), "Mezcla", "corto",004); 
+        Mascota perro2 = new Perro("Nala",LocalDate.of(2017, 10, 26) , "Mezcla", "largo", 005); 
+        Mascota gato = new Gato("Missy", LocalDate.of(2024, 5, 6), "egipcio", 006); 
+        Mascota loro = new Loro("Ago", LocalDate.of(2023, 9, 2), new String[]{"Naranja", "Morado"}, 007); 
+        Mascota gato3 = new Gato("Nami", LocalDate.of(2023, 3, 1), "NA", 8);
+        Mascota loro2 = new Loro("Nacho", LocalDate.of(2026, 1,1), new String[]{"Morado", "Naranja"}, 9);
 
         // Comprobemos si podemos comparar 
 
@@ -54,8 +62,39 @@ public class App {
         mascotas.add(perro2); 
         mascotas.add(gato); 
         mascotas.add(loro); 
+        mascotas.add(gato3); 
+        mascotas.add(loro2); 
 
+        //Streams 
+        List<Mascota> mayoresDeUnAño = mascotas.stream()
+            .filter(mascota -> mascota.getEdad() > 1)
+            .collect(Collectors.toList()); 
+
+        System.out.println("Mascotas mayores de un año: " + mayoresDeUnAño); 
+
+        Mascota perroMayor = mascotas.stream()
+            .filter(a -> a instanceof Perro)
+            .max(Comparator.comparingInt(Mascota::getEdad))
+            .orElseThrow(); 
+
+        System.out.println("EL perro de mayor edad es: " + perroMayor.getNombre()); 
+
+        List<Mascota> mascotasNa = mascotas.stream()
+            .filter(m -> m.getNombre().substring(0,2).equals("Na"))
+            .collect(Collectors.toList()); 
         
+        StringBuilder nombresNa = new StringBuilder(); 
+        for(Mascota m :mascotasNa){
+            nombresNa.append(m.getNombre() + " ");
+        }
+        System.out.println("Las macotas que comienzan por Na son: " + nombresNa); 
+
+
+        //Strings 
+
+        Mascota gato2 = new Gato("Minino", LocalDate.of(2025, 4, 2), "No sé", 7);
+        gato2.nombreDiminutivo(); 
+        perro.nombreDiminutivo();
 
     }
 }
