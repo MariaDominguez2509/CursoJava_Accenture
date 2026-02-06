@@ -2,6 +2,7 @@ package com.maria;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Objects;
 
 public class Loro extends Mascota{
     private final static int numeroDeAlas = 2;
@@ -10,7 +11,7 @@ public class Loro extends Mascota{
     private int numeroDePatas = 2; // lo sobreescribimos porque los loros son una excepcion
 
     public Loro(String nombre, LocalDate nacimiento, String[] colores, int codigoUnico){
-        this.nombre = nombre; 
+        this.nombre = Objects.requireNonNull(nombre, "Es obligatorio que tenga un nombre"); 
         this.nacimiento = nacimiento; 
         this.edad = Period.between(nacimiento, LocalDate.now()).getYears(); 
         this.colores = colores; 

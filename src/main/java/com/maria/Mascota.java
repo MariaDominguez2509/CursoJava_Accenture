@@ -5,6 +5,7 @@ public abstract class Mascota {
 
     //Características comunes 
     protected String nombre; 
+
     protected int codigoUnico; 
 
     protected LocalDate nacimiento; 
@@ -48,8 +49,12 @@ public abstract class Mascota {
 
     public void nombreDiminutivo(){
             String nombreMascota = nombre; 
-            String nombreCarinoso = nombreMascota.substring(0,4); 
-            System.out.println("El nombre cariñoso (por defecto) es: " + nombreCarinoso); 
+            try{
+                String nombreCarinoso = nombreMascota.substring(0,4); 
+                System.out.println("El nombre cariñoso (por defecto) es: " + nombreCarinoso);
+            }catch(Exception e){
+                System.out.println("No se ha podido: " + e + "\nEl nombre es demasiado corto"); 
+            }
 
         }
     

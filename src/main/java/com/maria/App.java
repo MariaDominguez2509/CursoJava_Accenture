@@ -7,7 +7,7 @@ import java.util.Comparator;
 
 public class App {
     public static void main(String[] args) {
-        Perro p = new Perro("Firulais", LocalDate.of(2022, 2, 6), "Labrador", "corto", 001); 
+        Perro p = new Perro("Firulais", LocalDate.of(2022, 2, 6), "Labrador", "corto", 1); 
         p.come();
         p.tipoEdad();
         p.sonido();
@@ -23,7 +23,7 @@ public class App {
     
     
 
-        Gato g = new Gato("Gato",LocalDate.of(2008, 6, 10) , "siames", 002);
+        Gato g = new Gato("Gato",LocalDate.of(2008, 6, 10) , "siames", 2);
         g.jugueteFavorito("Pelota");
         g.jugueteFavorito("Balón");
         g.tipoEdad();
@@ -31,23 +31,23 @@ public class App {
         g.caracteristicas();
         g.sonidoPeligro();
 
-        Loro l = new Loro("Pajaro",LocalDate.of(2025, 2, 4) , new String[] {"Rojo", "Amarillo", "Azul"}, 003); 
+        Loro l = new Loro("Pajaro",LocalDate.of(2025, 2, 4) , new String[] {"Rojo", "Amarillo", "Azul"}, 3); 
         l.caracteristicas();
         l.come();
         l.tipo();
         l.sonido(); 
 
-        Loro l2 = new Loro("A",  LocalDate.of(2018, 8, 30), new String[] {"Morado"}, 004); 
+        Loro l2 = new Loro("A",  LocalDate.of(2018, 8, 30), new String[] {"Morado"}, 4); 
         l2.caracteristicas(); 
 
         // Vamos a trabajar con ArrayList 
 
-        Mascota perro = new Perro("Kenai", LocalDate.of(2018, 2, 26), "Mezcla", "corto",004); 
-        Mascota perro2 = new Perro("Nala",LocalDate.of(2017, 10, 26) , "Mezcla", "largo", 005); 
-        Mascota gato = new Gato("Missy", LocalDate.of(2024, 5, 6), "egipcio", 006); 
-        Mascota loro = new Loro("Ago", LocalDate.of(2023, 9, 2), new String[]{"Naranja", "Morado"}, 007); 
-        Mascota gato3 = new Gato("Nami", LocalDate.of(2023, 3, 1), "NA", 8);
-        Mascota loro2 = new Loro("Nacho", LocalDate.of(2026, 1,1), new String[]{"Morado", "Naranja"}, 9);
+        Mascota perro = new Perro("Kenai", LocalDate.of(2018, 2, 26), "Mezcla", "corto",5); 
+        Mascota perro2 = new Perro("Nala",LocalDate.of(2017, 10, 26) , "Mezcla", "largo", 6); 
+        Mascota gato = new Gato("Missy", LocalDate.of(2024, 5, 6), "egipcio", 7); 
+        Mascota loro = new Loro("Ago", LocalDate.of(2023, 9, 2), new String[]{"Naranja", "Morado"}, 8); 
+        Mascota gato3 = new Gato("Nami", LocalDate.of(2023, 3, 1), "NA", 9);
+        Mascota loro2 = new Loro("Nacho", LocalDate.of(2026, 1,1), new String[]{"Morado", "Naranja"}, 10);
 
         // Comprobemos si podemos comparar 
 
@@ -95,6 +95,11 @@ public class App {
         Mascota gato2 = new Gato("Minino", LocalDate.of(2025, 4, 2), "No sé", 7);
         gato2.nombreDiminutivo(); 
         perro.nombreDiminutivo();
+        loro.nombreDiminutivo();
+
+        Thread hilo = new Thread(new Tarea("   Pequeña prueba")); 
+        hilo.start();
+
 
     }
 }

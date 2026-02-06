@@ -1,7 +1,8 @@
 package com.maria;
 import com.maria.Paseable;
 import java.util.ArrayList; 
-import java.util.List; 
+import java.util.List;
+import java.util.Objects;
 import java.util.Set; 
 import java.util.HashSet; 
 import java.time.LocalDate;
@@ -15,7 +16,7 @@ public class Gato extends Mascota implements Paseable, SonidoPeligro {
 
 
     public Gato(String nombre, LocalDate nacimiento, String raza, int codigoUnico) {
-        this.nombre = nombre; 
+        this.nombre =Objects.requireNonNull(nombre, "Es obligatorio que tenga un nombre"); 
         this.nacimiento = nacimiento; 
         this.edad = Period.between(nacimiento, LocalDate.now()).getYears();
         this.raza = raza; 

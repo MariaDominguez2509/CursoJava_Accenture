@@ -1,7 +1,8 @@
 package com.maria;
 import com.maria.Paseable;
 import com.maria.SonidoPeligro;
-import java.util.List; 
+import java.util.List;
+import java.util.Objects;
 import java.lang.FunctionalInterface;
 import java.time.LocalDate;
 import java.time.Period;
@@ -19,7 +20,7 @@ public class Perro extends Mascota implements Paseable, SonidoPeligro{
     EdadHumana edad2 = (a) -> a * 7; 
 
     public Perro(String nombre, LocalDate nacimiento, String raza, String tipoPelo, int codigoUnico){
-        this.nombre = nombre; 
+        this.nombre = Objects.requireNonNull(nombre, "Es obligatorio que tenga un nombre"); 
         this.nacimiento = nacimiento; 
         this.edad =  Period.between(nacimiento, LocalDate.now()).getYears();
 
