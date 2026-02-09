@@ -11,7 +11,7 @@ public class App {
         p.come();
         p.tipoEdad();
         p.sonido();
-        p.caracteristicas();
+        System.out.println(p.caracteristicas());
         p.juguetes(new String[] {"Pelota", "Cuerda"}); //usando String[]
         p.juguetes2(List.of("Pelota", "Cuerda")); //usando List 
         p.tipo();
@@ -28,17 +28,17 @@ public class App {
         g.jugueteFavorito("Balón");
         g.tipoEdad();
         g.sonido();
-        g.caracteristicas();
+        System.out.println(g.caracteristicas());
         g.sonidoPeligro();
 
         Loro l = new Loro("Pajaro",LocalDate.of(2025, 2, 4) , new String[] {"Rojo", "Amarillo", "Azul"}, 3); 
-        l.caracteristicas();
+        System.out.println(l.caracteristicas());
         l.come();
         l.tipo();
         l.sonido(); 
 
         Loro l2 = new Loro("A",  LocalDate.of(2018, 8, 30), new String[] {"Morado"}, 4); 
-        l2.caracteristicas(); 
+        System.out.println(l2.caracteristicas()); 
 
         // Vamos a trabajar con ArrayList 
 
@@ -100,6 +100,15 @@ public class App {
         Thread hilo = new Thread(new Tarea("   Pequeña prueba")); 
         hilo.start();
 
+
+        Caja caja = new Caja(); 
+        System.out.println("La caja está vacía: " + caja.estaVacia()); 
+
+        caja.guardarEnCaja("elemento1"); 
+        caja.guardarEnCaja("elemento2"); 
+        var a = caja.devuelve(); 
+        System.out.println("Contenido de la caja " + a);
+        System.out.println("La caja está vacía: " +caja.estaVacia());  
 
     }
 }

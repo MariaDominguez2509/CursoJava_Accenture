@@ -18,7 +18,7 @@ public class Loro extends Mascota{
         this.codigoUnico = codigoUnico; 
     }
 
-    public void caracteristicas(){
+    public String caracteristicas(){
         int a = colores.length; 
         String frase = ""; 
         if(edad > 1){
@@ -36,7 +36,7 @@ public class Loro extends Mascota{
             frase += colores[0];
         }
         frase += ", tiene " + numeroDePatas + " patas y " + numeroDeAlas + " alas";
-        System.out.println(frase);
+        return frase; 
     }
     public void come(){
         System.out.println("No sé lo que come el loro"); 

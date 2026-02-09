@@ -23,13 +23,18 @@ public class Gato extends Mascota implements Paseable, SonidoPeligro {
         this.codigoUnico = codigoUnico; 
     }
 
-    public void caracteristicas(){
+    public String caracteristicas(){
+        String frase = ""; 
         if(edad > 1){
-            System.out.println("El gato se llama " + nombre + " tiene " + edad + " años y es un "+ raza + " y tiene " + numeroDePatas + " patas" );
+            frase = "El gato se llama " + nombre + " tiene " + edad + " años y es un "+ raza + " y tiene " + numeroDePatas + " patas";
         } else {
-            System.out.println("El gato se llama " + nombre + " tiene " + edad + " año y es un "+ raza + " y tiene " + numeroDePatas + " patas" );
+            frase = "El gato se llama " + nombre + " tiene " + edad + " año y es un "+ raza + " y tiene " + numeroDePatas + " patas" ;
         }
-    }
+        return frase; 
+        }
+    
+    
+
 
     public void come(){
         System.out.println("El gato come pienso");

@@ -46,14 +46,16 @@ public class Perro extends Mascota implements Paseable, SonidoPeligro{
     }
 
     //Acciones propias 
-
-    public void caracteristicas(){
+    public String caracteristicas(){
+        String frase = ""; 
         if(edad > 1){
-            System.out.println("El perro se llama " + nombre + " tiene " + edad + " años (edad real " + edadHumana + ") y es un "+ raza + " y tiene " + numeroDePatas + " patas");
+            frase = "El perro se llama " + nombre + " tiene " + edad + " años (edad real " + edadHumana + ") y es un "+ raza + " y tiene " + numeroDePatas + " patas";
         } else {
-            System.out.println("El perro se llama " + nombre + " tiene " + edad + " año y es un "+ raza + "y tiene " + numeroDePatas + " patas");
+            frase = "El perro se llama " + nombre + " tiene " + edad + " año y es un "+ raza + "y tiene " + numeroDePatas + " patas";
         }
-    }
+        return frase; 
+        }
+        
     
     
     public void tipoEdad(){

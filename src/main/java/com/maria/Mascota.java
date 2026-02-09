@@ -57,6 +57,19 @@ public abstract class Mascota {
             }
 
         }
-    
 
-}
+        
+        public String caracteristicas(){
+            String frase = ""; 
+            if(edad > 1){
+                frase = "La mascota se llama " + nombre + " tiene " + edad + " años";
+            } else {
+                frase = "La mascota se llama " + nombre + " tiene " + edad + " año";
+            }
+            return frase; 
+        }
+    
+    
+    
+    }
+
